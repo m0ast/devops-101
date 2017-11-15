@@ -21,8 +21,8 @@
     "EC2InstanceAppServer" : {
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
-        "ImageId" : "ami-20bd1f57",
-        "InstanceType" : "m1.medium",
+        "ImageId" : "ami-add175d4",
+        "InstanceType" : "m3.medium",
         "KeyName" : "main",
         "SubnetId" : { "Ref" : "SubnetId" },
         "SecurityGroupIds" : [ { "Ref" : "SecurityGroupId" } ],
@@ -32,13 +32,13 @@
           "#!/bin/sh \n",
           "apt-get update \n",
           "apt-get upgrade -y \n",
-          "apt-get install openjdk-7-jdk -y \n",
-          "apt-get install python-pip -y \n",
+          "apt-get install openjdk-8-jdk -y \n",
+          "apt-get install python3-pip -y \n",
           "pip install awscli \n",
           "useradd devops-user \n",
           "mkdir /home/devops-user \n",
           "chown devops-user:devops-user /home/devops-user \n",
-          "aws s3 cp s3://devops-part-four/ /home/devops-user --recursive --exclude \"*\" --include \"application-*-", { "Ref" : "BuildNumber" }, "-standalone.jar\" \n",
+          "aws s3 cp s3://dop4/ /home/devops-user --recursive --exclude \"*\" --include \"application-*-", { "Ref" : "BuildNumber" }, "-standalone.jar\" \n",
           "chown devops-user:devops-user /home/devops-user/application-*-standalone.jar \n",
           "su - devops-user -c \"java -jar /home/devops-user/application-*-standalone.jar\""
 		    ]]}}
