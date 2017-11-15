@@ -134,7 +134,7 @@
     "EC2Instance": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
-        "ImageId": "ami-785db401",
+        "ImageId": "ami-760aaa0f",
         "InstanceType": "t2.micro",
         "KeyName": "main",
         "SubnetId": { "Ref": "Subnet" },

@@ -1,8 +1,16 @@
-[ci-master]
-YOUR_CI_MASTER_PUBLIC_IP
+ci-master         ansible_ssh_host=52.17.197.178
+ci-slave          ansible_ssh_host=52.18.191.75 ci_master_private_ip=10.0.0.137
 
-[ci-slave]
-YOUR_CI_SLAVE_PUBLIC_IP
+[ci]
+ci-master
+ci-slave
 
-[ci-slave:vars]
-ci_master_private_ip=YOUR_CI_MASTER_PRIVATE_IP
+[ci:vars]
+ansible_ssh_private_key_file=~/.ssh/main.pem
+
+[py3hosts]
+ci-slave
+ci-master
+
+[py3hosts:vars]
+ansible_python_interpreter=/usr/bin/python3

@@ -193,8 +193,8 @@
     "EC2InstanceCIMaster" : {
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
-        "ImageId" : "ami-20bd1f57",
-        "InstanceType" : "m1.medium",
+        "ImageId" : "ami-add175d4",
+        "InstanceType" : "m3.medium",
         "KeyName" : "main",
         "SubnetId" : { "Ref" : "Subnet" },
         "SecurityGroupIds" : [ { "Ref" : "SecurityGroup" } ],
@@ -205,8 +205,8 @@
     "EC2InstanceCISlave" : {
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
-        "ImageId" : "ami-20bd1f57",
-        "InstanceType" : "m1.medium",
+        "ImageId" : "ami-add175d4",
+        "InstanceType" : "m3.medium",
         "KeyName" : "main",
         "SubnetId" : { "Ref" : "Subnet" },
         "SecurityGroupIds" : [ { "Ref" : "SecurityGroup" } ],
@@ -226,7 +226,7 @@
     "S3Bucket" : {
       "Type" : "AWS::S3::Bucket",
       "Properties" : {
-        "BucketName" : "devops-part-four"
+        "BucketName" : "dop4"
       }
     },
 
